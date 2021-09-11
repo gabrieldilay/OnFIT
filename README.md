@@ -1,1 +1,1 @@
-# Exemplo de criação e utilização de repositorio github no visual studio code.
+# Exemplo de criação e utilização de repositorio GitHub no VS Code.
