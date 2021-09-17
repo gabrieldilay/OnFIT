@@ -8,5 +8,4 @@ class Exercicio
     public  int Series {get; set; }
     public  int Repetições {get; set; }
     public  int Carga {get; set; }
-
 }

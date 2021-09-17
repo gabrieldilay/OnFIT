@@ -1,5 +1,3 @@
-
-
 class Aluno
 {
     public  int IdAluno {get; set; }
@@ -8,5 +6,4 @@ class Aluno
     public string Senha {get; set; }
     public double Altura {get; set; }
     public double Peso {get; set; }
-
 }

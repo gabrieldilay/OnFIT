@@ -8,5 +8,4 @@ class Professor
     public  string  Email {get; set; }
     public  string  Cpf {get; set; }
     public  string  Cref {get; set; }
-
 }
