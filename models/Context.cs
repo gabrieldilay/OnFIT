@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace models {
+namespace Models {
 
     public class Context : DbContext {
         
@@ -9,6 +9,7 @@ namespace models {
         public DbSet<Exercicio> Exercicios { get; set; }
         public DbSet<Ficha> Fichas { get; set; }
         public DbSet<Professor> Professores { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
         
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {

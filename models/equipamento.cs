@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 
-namespace models {
+namespace Models {
 
 public class Equipamento
 {
-    public  int Id {get; set; }
-    public  int NomeEquipamentos {get; set; }
+    public  int EquipamentoId { get; set; }
+    public  string NomeEquipamentos { get; set; }
 }
 }
