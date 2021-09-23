@@ -22,7 +22,6 @@ namespace Services
         Subject = new ClaimsIdentity(new Claim[]
         {
           new Claim(ClaimTypes.Name, usuario.Id.ToString()),
-          new Claim(ClaimTypes.Role, usuario.AlunoEmail.ToString())
         }),
         Expires = DateTime.UtcNow.AddHours(2),
         SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(appKey),

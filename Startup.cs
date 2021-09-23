@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Models;
 
 namespace OnFit
 {
@@ -32,7 +33,11 @@ namespace OnFit
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "OnFit", Version = "v1" });
             });
+
+            services.AddDbContext<Context>();
         }
+
+            
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
