@@ -99,6 +99,9 @@ namespace OnFit.Controllers
             return NoContent();
         }
 
-        
+        private bool AlunoExists(int id)
+        {
+            return _context.Alunos.Any(e => e.Id == id);
+        }
     }
 }
