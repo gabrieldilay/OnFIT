@@ -99,9 +99,6 @@ namespace OnFit.Controllers
             return NoContent();
         }
 
-        private bool UsuarioExists(int id)
-        {
-            return _context.Usuarios.Any(e => e.Id == id);
-        }
+        
     }
 }
