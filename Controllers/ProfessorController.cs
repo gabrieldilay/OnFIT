@@ -99,9 +99,6 @@ namespace OnFit.Controllers
             return NoContent();
         }
 
-        private bool ProfessorExists(int id)
-        {
-            return _context.Professores.Any(e => e.Id == id);
-        }
+        
     }
 }
