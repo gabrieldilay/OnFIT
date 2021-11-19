@@ -7,7 +7,7 @@ using Microsoft.IdentityModel.Tokens;
 using Models;
 using OnFit;
 
-namespace Services 
+namespace OnFit.Services
 {
 
   public static class TokenService 

@@ -8,7 +8,7 @@ using Models;
 
 namespace OnFit.Migrations
 {
-    [DbContext(typeof(Context))]
+    [DbContext(typeof(Data.Context))]
     [Migration("20210921203724_Initial")]
     partial class Initial
     {

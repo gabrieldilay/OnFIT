@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Models;
+using Data;
+using OnFit.Services;
 
 namespace OnFit.Controllers
 {
@@ -20,11 +22,25 @@ namespace OnFit.Controllers
             _context = context;
         }
 
-        // GET: api/Usuario
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Usuario>>> GetUsuarios()
+       [HttpPost]
+        [Route("Login")]
+        public ActionResult<dynamic> Login([FromBody]Credencial credencial)
         {
-            return await _context.Usuarios.ToListAsync();
+            // Localizar usuário no banco de dados.
+            var usuario = _context.Usuarios.SingleOrDefault(u => u.Login == credencial.Login);
+
+            // Verificar se o usuário existe na base e comparar as senhas.
+            if (usuario == null || !SenhaService.CompararHash(credencial.Senha, usuario.Senha)) {
+              return NotFound(new { message = "Usuário ou senha inválidos"});
+            }
+
+            // Gerar o Token
+            var token = TokenService.GerarToken(usuario);
+
+            return new {
+              usuario = usuario,
+              token = token
+            };
         }
 
         // GET: api/Usuario/5
@@ -50,6 +66,10 @@ namespace OnFit.Controllers
             {
                 return BadRequest();
             }
+
+            string senha = usuario.Senha;
+            string hash = SenhaService.GerarHash(senha);
+            usuario.Senha = hash;  
 
             _context.Entry(usuario).State = EntityState.Modified;
 
@@ -77,6 +97,10 @@ namespace OnFit.Controllers
         [HttpPost]
         public async Task<ActionResult<Usuario>> PostUsuario(Usuario usuario)
         {
+            string senha = usuario.Senha;
+            string hash = SenhaService.GerarHash(senha);
+            usuario.Senha = hash;            
+            
             _context.Usuarios.Add(usuario);
             await _context.SaveChangesAsync();
 

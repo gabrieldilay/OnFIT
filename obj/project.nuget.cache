@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "6fw7drBlCbB9Ttr7pQkOROxltcBHaASVl/I1cX9OSZwfHbF+5aTSXFrfritrVT4aK6mb55PWOwu/5xOC4SCTnw==",
+  "dgSpecHash": "aU1p2df2lGqsBMXnMxutNv5+O6tQCjV7L1gAg61l3o9buV0UdKys4Y8NMmAneiIjGbwMI6BwL+pVBa4UyjvW8w==",
   "success": true,
   "projectFilePath": "C:\\Projetos\\OnFit\\OnFit.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Usuário\\.nuget\\packages\\bcrypt.net-next\\4.0.2\\bcrypt.net-next.4.0.2.nupkg.sha512",
     "C:\\Users\\Usuário\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Usuário\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\Usuário\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
