@@ -105,5 +105,4 @@ namespace OnFit.Controllers
             return _context.Equipamentos.Any(e => e.Id == id);
         }
     }
-    ##
 }
