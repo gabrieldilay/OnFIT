@@ -10,6 +10,4 @@ public class Usuario
     [JsonIgnore]
     public  string Senha { get; set; }
     
-    
-    }
-}
+}}
