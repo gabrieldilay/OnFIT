@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Models;
 using Data;
-using OnFit.Services;
+using Services;
 
 namespace OnFit.Controllers
 {
@@ -60,16 +60,17 @@ namespace OnFit.Controllers
         // PUT: api/Usuario/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutUsuario(int id, Usuario usuario)
+        public async Task<IActionResult> PutUsuario(int id, [FromBody]Credencial credencial)
         {
-            if (id != usuario.Id)
-            {
-                return BadRequest();
-            }
 
-            string senha = usuario.Senha;
+            string senha = credencial.Senha;
             string hash = SenhaService.GerarHash(senha);
-            usuario.Senha = hash;  
+
+            Usuario usuario = new Usuario();
+            usuario.Id = id;
+            usuario.Login = credencial.Login;
+            usuario.Papel = credencial.Papel;
+            usuario.Senha = hash;
 
             _context.Entry(usuario).State = EntityState.Modified;
 
@@ -95,12 +96,17 @@ namespace OnFit.Controllers
         // POST: api/Usuario
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Usuario>> PostUsuario(Usuario usuario)
+        public async Task<ActionResult<Usuario>> PostUsuario([FromBody]Credencial credencial )
         {
-            string senha = usuario.Senha;
+            string senha = credencial.Senha;
             string hash = SenhaService.GerarHash(senha);
-            usuario.Senha = hash;            
-            
+                      
+            Usuario usuario = new Usuario();
+            usuario.Login = credencial.Login;
+            usuario.Papel = credencial.Papel;
+            usuario.Senha = hash;
+
+
             _context.Usuarios.Add(usuario);
             await _context.SaveChangesAsync();
 

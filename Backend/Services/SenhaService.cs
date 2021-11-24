@@ -8,7 +8,7 @@ using Data;
 
 // dotnet add package BCrypt.Net-Next
 
-namespace OnFit.Services {
+namespace Services {
 
   public static class SenhaService {
 
