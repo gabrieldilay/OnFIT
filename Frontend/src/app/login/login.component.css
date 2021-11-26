@@ -1,0 +1,53 @@
+*{
+    font-family: Verdana, Arial, Helvetica;
+    font-size: 18px;
+    
+}
+
+#all_login{
+
+    display: block;
+    margin: auto auto;
+    
+}
+#login_component{
+
+    padding: 3em;
+    display: block;
+    display: inline-block;
+    background-color: #c4c4c4 ;
+    margin: auto auto;
+    border-radius: 10px ;
+    
+
+}
+
+#cadastro{
+
+    display: block;
+    text-align: center;
+    color: black;
+
+}
+
+#email{
+
+    display: block;
+    margin: 10px 0px 10px;
+
+}
+#senha{
+
+    display: block;
+    margin: 10px 0px 10px;
+
+}
+
+#entrar{
+
+    display: block;
+    text-align: center;
+    margin: 10px auto 10px;
+    padding: 5px 3em;
+
+}
